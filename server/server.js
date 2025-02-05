@@ -169,9 +169,56 @@ app.post('/upload', upload.single('qrImage'), async (req, res) => {
     }
 });
 
+// Proxy endpoints for Python NumPy-based financial analytics service
+const PYTHON_SERVICE_URL = process.env.PYTHON_SERVICE_URL || 'http://localhost:5001';
+
+// Proxy endpoint for financial statistics
+app.post('/api/financial/statistics', async (req, res) => {
+    try {
+        const response = await axios.post(`${PYTHON_SERVICE_URL}/api/financial/statistics`, req.body);
+        res.json(response.data);
+    } catch (error) {
+        console.error('Error calling Python service:', error.message);
+        res.status(500).json({ error: 'Error calculating statistics' });
+    }
+});
+
+// Proxy endpoint for trend analysis
+app.post('/api/financial/trends', async (req, res) => {
+    try {
+        const response = await axios.post(`${PYTHON_SERVICE_URL}/api/financial/trends`, req.body);
+        res.json(response.data);
+    } catch (error) {
+        console.error('Error calling Python service:', error.message);
+        res.status(500).json({ error: 'Error calculating trends' });
+    }
+});
+
+// Proxy endpoint for risk metrics
+app.post('/api/financial/risk-metrics', async (req, res) => {
+    try {
+        const response = await axios.post(`${PYTHON_SERVICE_URL}/api/financial/risk-metrics`, req.body);
+        res.json(response.data);
+    } catch (error) {
+        console.error('Error calling Python service:', error.message);
+        res.status(500).json({ error: 'Error calculating risk metrics' });
+    }
+});
+
+// Proxy endpoint for budget forecasting
+app.post('/api/financial/forecast', async (req, res) => {
+    try {
+        const response = await axios.post(`${PYTHON_SERVICE_URL}/api/financial/forecast`, req.body);
+        res.json(response.data);
+    } catch (error) {
+        console.error('Error calling Python service:', error.message);
+        res.status(500).json({ error: 'Error generating forecast' });
+    }
+});
 
 // Запуск сервера
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
+    console.log(`Python service URL: ${PYTHON_SERVICE_URL}`);
 });

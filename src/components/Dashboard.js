@@ -8,6 +8,7 @@ import './Dashboard.css';
 import ExpensePieChart from './PieChartComponent';
 import BarChartComponent from './BarChartComponent';
 import LineChartComponent from './LineChartComponent';
+import FinancialAnalytics from './FinancialAnalytics';
 import { ref, onValue } from 'firebase/database';
 import { database } from '../firebase';
 
@@ -190,6 +191,8 @@ const Dashboard = ({ user }) => {
                     </tbody>
                 </table>
             </div>
+
+            <FinancialAnalytics costs={filteredCosts} />
 
             <Costs
                 costs={filteredCosts} // Передає фільтровані витрати

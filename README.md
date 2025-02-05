@@ -1,6 +1,99 @@
-# Getting Started with Create React App
+# Finance Tracker Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A comprehensive finance tracking web application with advanced analytics powered by Python and NumPy.
+
+## Features
+
+- **Expense and Income Tracking**: Track your daily financial transactions
+- **QR Code Receipt Scanning**: Automatically extract purchase information from QR codes
+- **Data Visualization**: Interactive charts and graphs for financial insights
+- **Advanced Analytics**: Statistical analysis, trend detection, risk metrics, and budget forecasting using NumPy
+- **User Authentication**: Secure login and registration with Firebase
+
+## Tech Stack
+
+- **Frontend**: React, Chart.js, Recharts
+- **Backend**: Node.js/Express
+- **Python Backend**: Flask with NumPy for financial calculations
+- **Database**: Firebase Realtime Database
+- **Authentication**: Firebase Auth
+
+## Python & NumPy Integration
+
+The application includes a Python backend service that leverages NumPy for advanced financial calculations:
+
+- **Statistical Analysis**: Mean, median, standard deviation, variance, percentiles
+- **Trend Analysis**: Moving averages using NumPy convolution, growth rate calculations
+- **Risk Metrics**: Volatility, Sharpe ratio, Value at Risk (VaR), maximum drawdown
+- **Budget Forecasting**: Linear regression for future budget predictions
+
+### Python Service Setup
+
+1. Install Python dependencies:
+```bash
+cd server
+pip install -r requirements.txt
+```
+
+2. Start the Python service:
+```bash
+python python_service.py
+```
+
+The Python service runs on `http://localhost:5001` by default.
+
+## Getting Started
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/qby0/finance-tracker-webapp.git
+cd finance-tracker-webapp
+```
+
+2. Install Node.js dependencies:
+```bash
+npm install
+```
+
+3. Install Python dependencies:
+```bash
+cd server
+pip install -r requirements.txt
+cd ..
+```
+
+## Running the Application
+
+### Start the Python Backend Service
+
+In one terminal, start the Python service:
+```bash
+cd server
+python python_service.py
+```
+
+The Python service will run on `http://localhost:5001`
+
+### Start the Node.js Server
+
+In another terminal, start the Node.js server:
+```bash
+cd server
+node server.js
+```
+
+The Node.js server will run on `http://localhost:5000`
+
+### Start the React Frontend
+
+In a third terminal, start the React development server:
+```bash
+npm start
+```
+
+The application will open at `http://localhost:3000`
 
 ## Available Scripts
 
